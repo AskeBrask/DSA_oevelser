@@ -74,4 +74,25 @@ def draw_fibonacci_spiral(n):
             y -= side
 
         # Draw the square
-        canvas.create_re
+        canvas.create_rectangle(x1, y1, x2, y2, outline="blue", width=2)
+
+        # Draw the arc for the spiral effect
+        canvas.create_arc(x1, y1, x2, y2, start=angle, extent=90, style=tk.ARC, outline="red", width=2)
+
+        # Update the display and play sound
+        play_sound()
+        window.update()
+        time.sleep(delay)
+
+        # Rotate 90 degrees for the next square
+        angle = (angle + 90) % 360
+
+# Button to start visualization
+def start_visualization():
+    n = 10  # Number of Fibonacci numbers to visualize
+    draw_fibonacci_spiral(n)
+
+start_button = tk.Button(window, text="Start Fibonacci Spiral Visualization", command=start_visualization)
+start_button.pack()
+
+window.mainloop()
