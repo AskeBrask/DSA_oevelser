@@ -18,7 +18,7 @@ sound_file = "/Users/askebrask/Downloads/bib.mp3"  # Full path to your sound fil
 beep_sound = pygame.mixer.Sound(sound_file)
 
 # Generate random data for the bars
-array = [random.randint(10, 300) for _ in range(400)]  # Reduced length for better visualization
+array = [random.randint(10, 300) for _ in range(10)]  # Reduced length for better visualization
 
 # Function to play a sound
 def play_sound():
